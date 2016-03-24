@@ -1,28 +1,40 @@
 <?php
-  include("../includes/fonctions.php");
-  spl_autoload_register("chargerClasse"); // On enregistre la fonction chargerClasse() pour qu'elle soit appelée à l'instanciation d'une classe non déclarée.
-  session_start();
-
+  include ("../includes/connexion_bdd.php");
+  require ("../classes/Autoloader.class.php");
+  Autoloader::register();
 
   if (!empty($_POST["login"]) && !empty($_POST["pass"])) {
+
+    // On sécurise l'accés à la bdd en s'assurant que l'utilisateur rentre ce qu'on attend qu'il rentre.
+    //$login = ConnexionEmploye::securite_bdd($_POST["login"]);
+    //$pass = ConnexionEmploye::securite_bdd($_POST["pass"]);
     $login = $_POST["login"];
     $pass = $_POST["pass"];
 
-    // On fait ici appel à une méthode statique de la classe Personnel.
-    $req_employe_connecte = Personnel::connexion_employe($login, $pass);
+    // Instanciation de la classe ClassesManager pour créer un objet de gestion de l'employé qui va se connecter.
+    $gestion_employe = new ClassesManager($connexion_bdd);
 
-    if ($req_employe_connecte->rowCount() == 1) {
-      $employe_connecte = $req_employe_connecte->fetch();
+    // On utilise le nouvel objet de gestion de l'employe pour le connecter.
+    $connexion_employe = $gestion_employe->connexion($login, $pass);
+
+    // Si l'employé est présent en base de données...
+    if ($connexion_employe->rowCount() == 1) {
+
+      // On stock ses infos dans le tableau $employe_connecte.
+      $employe_connecte = $connexion_employe->fetch();
 
       // Instanciation de la classe Personnel avec l'instance $employe.
-      $employe = new Personnel($employe_connecte["EmployeeID"]);
+      $employe = new Personnel($employe_connecte);
+      $nomResponsable = $gestion_employe->responsable($employe);
+      $employe->setResponsable($nomResponsable);
+      session_start();
       $_SESSION["employe"] = $employe;
 
       if ($employe_connecte["ReportsTo"] == null) {
         header("location:../emplcnt.php");
       }
       else {
-        header("location:../page.employe.php");
+        header("location:../accueil.employe.php");
       }
 
     }

@@ -1,8 +1,7 @@
 <?php
-  include_once ("classes/Personnel.class.php");
   include ("includes/header2.php");
 ?>
-  <div class="corpsPage container">
+
 
     <div class="row">
       <h2>PROFIL EMPLOYE</h2>
@@ -21,9 +20,9 @@
             </thead>
             <tbody>
               <tr>
-                <td><?php echo $employe->getTitleOfCourtesy(); ?></td>
-                <td><?php echo $employe->getLastName(); ?></td>
-                <td><?php echo $employe->getFirstName(); ?></td>
+                <td><?php echo $employe->getTitleOfCourtesy() ;?></td>
+                <td><?php echo $employe->getLastName() ;?></td>
+                <td><?php echo $employe->getFirstName() ;?></td>
               </tr>
             </tbody>
           </table>
@@ -39,8 +38,8 @@
             </thead>
             <tbody>
               <tr>
-                <td><?php echo $employe->getTitle(); ?></td>
-                <td><?php echo $employe->getResponsable(); ?></td>
+                <td><?php echo $employe->getTitle() ;?></td>
+                <td><?php echo $employe->getResponsable() ;?></td>
               </tr>
             </tbody>
           </table>
@@ -57,9 +56,9 @@
             </thead>
             <tbody>
               <tr>
-                <td><?php echo $employe->getEmployeeID(); ?></td>
-                <td><?php echo $employe->getLogin(); ?></td>
-                <td><?php echo $employe->getPass(); ?></td>
+                <td><?php echo $employe->getEmployeeID() ;?></td>
+                <td><?php echo $employe->getLogin() ;?></td>
+                <td><?php echo $employe->getPass() ;?></td>
               </tr>
             </tbody>
           </table>
@@ -83,12 +82,12 @@
             </thead>
             <tbody>
               <tr>
-                <td><?php echo $employe->getAddress(); ?></td>
-                <td><?php echo $employe->getCity(); ?></td>
-                <td><?php echo $employe->getPostalCode(); ?></td>
-                <td><?php echo $employe->getRegion(); ?></td>
-                <td><?php echo $employe->getCountry(); ?></td>
-                <td><?php echo $employe->getHomePhone(); ?></td>
+                <td><?php echo $employe->getAddress() ;?></td>
+                <td><?php echo $employe->getCity() ;?></td>
+                <td><?php echo $employe->getPostalCode() ;?></td>
+                <td><?php echo $employe->getRegion() ;?></td>
+                <td><?php echo $employe->getCountry() ;?></td>
+                <td><?php echo $employe->getHomePhone() ;?></td>
               </tr>
             </tbody>
           </table>
@@ -112,7 +111,7 @@
 
 
 
-  </div><!-- Fermeture corpsPage-->
+  
 
 
 <?php

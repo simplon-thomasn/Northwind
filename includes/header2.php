@@ -1,8 +1,11 @@
 <?php
+  require ("classes/Autoloader.class.php");
+  Autoloader::register();
+
   session_start();
   $employe = $_SESSION["employe"];
-  $employe->responsable($employe->getReportsTo());
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,6 +24,7 @@
   </head>
   <body>
 
+  <div class="container-fluid">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -30,15 +34,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand">NORTHWIND - <?php echo $employe->getLastName()." ".$employe->getFirstName();?></a>
+          <a class="navbar-brand">NORTHWIND -<?php echo " ".$employe->getLastName()." ".$employe->getFirstName()?> </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Profil</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Stock</a></li>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="profil.employe.php">Gestion Profil</a></li>
+            <li><a href="#">Gestion Clients</a></li>
+            <li><a href="#">Gestion Stock</a></li>
             <li><a href="#">Déconnexion</a></li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <div class="corpsPage container">

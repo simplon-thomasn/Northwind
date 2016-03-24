@@ -24,18 +24,125 @@
     private $_Responsable;
 
     // Déclaration de variables constantes, tjrs en majuscule.
-    const VAR_CONSTANTE = "val";
-    const VAR_CONSTANTE2 = "autre_val"
+    //const VAR_CONSTANTE = "val";
+    //const VAR_CONSTANTE2 = "autre_val";
 
   /* ------------------------------------------------------------------------ */
   /* ----- ACCESSEURS ------------------------------------------------------- */
   /* ------------------------------------------------------------------------ */
+
     /**
      * Get the value of Employee
      *
      * @return mixed
      */
-    public function getEmployeeID(){ return $this->_EmployeeID; }
+    public function getEmployeeID() { return $this->_EmployeeID; }
+    /**
+     * Get the value of Last Name
+     *
+     * @return mixed
+     */
+    public function getLastName() { return $this->_LastName; }
+    /**
+     * Get the value of First Name
+     *
+     * @return mixed
+     */
+    public function getFirstName() { return $this->_FirstName; }
+    /**
+     * Get the value of Title
+     *
+     * @return mixed
+     */
+    public function getTitle() { return $this->_Title; }
+    /**
+     * Get the value of Title Of Courtesy
+     *
+     * @return mixed
+     */
+    public function getTitleOfCourtesy() { return $this->_TitleOfCourtesy; }
+    /**
+     * Get the value of Birth Date
+     *
+     * @return mixed
+     */
+    public function getBirthDate() { return $this->_BirthDate; }
+    /**
+     * Get the value of Hire Date
+     *
+     * @return mixed
+     */
+    public function getHireDate() { return $this->_HireDate; }
+    /**
+     * Get the value of Address
+     *
+     * @return mixed
+     */
+    public function getAddress() { return $this->_Address; }
+    /**
+     * Get the value of City
+     *
+     * @return mixed
+     */
+    public function getCity() { return $this->_City; }
+    /**
+     * Get the value of Postal Code
+     *
+     * @return mixed
+     */
+    public function getPostalCode() { return $this->_PostalCode; }
+    /**
+     * Get the value of Region
+     *
+     * @return mixed
+     */
+    public function getRegion() { return $this->_Region; }
+    /**
+     * Get the value of Country
+     *
+     * @return mixed
+     */
+    public function getCountry() { return $this->_Country; }
+    /**
+     * Get the value of Home Phone
+     *
+     * @return mixed
+     */
+    public function getHomePhone() { return $this->_HomePhone; }
+    /**
+     * Get the value of Reports To
+     *
+     * @return mixed
+     */
+    public function getReportsTo() { return $this->_ReportsTo; }
+    /**
+     * Get the value of Salary
+     *
+     * @return mixed
+     */
+    public function getSalary() { return $this->_Salary; }
+    /**
+     * Get the value of Login
+     *
+     * @return mixed
+     */
+    public function getLogin() { return $this->_Login; }
+    /**
+     * Get the value of Pass
+     *
+     * @return mixed
+     */
+    public function getPass() { return $this->_Pass; }
+    /**
+     * Get the value of Employee
+     *
+     * @return mixed
+     */
+    public function getResponsable() { return $this->_Responsable; }
+
+  /* ------------------------------------------------------------------------ */
+  /* ----- MUTATEURS ------------------------------------------------------- */
+  /* ------------------------------------------------------------------------ */
 
     /**
      * Set the value of Employee
@@ -46,21 +153,10 @@
      */
     public function setEmployeeID($EmployeeID)
     {
-        $this->EmployeeID = $EmployeeID;
+      $this->_EmployeeID = $EmployeeID;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Last Name
-     *
-     * @return mixed
-     */
-    public function getLastName()
-    {
-        return $this->LastName;
-    }
-
     /**
      * Set the value of Last Name
      *
@@ -70,21 +166,10 @@
      */
     public function setLastName($LastName)
     {
-        $this->LastName = $LastName;
+      $this->_LastName = $LastName;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of First Name
-     *
-     * @return mixed
-     */
-    public function getFirstName()
-    {
-        return $this->FirstName;
-    }
-
     /**
      * Set the value of First Name
      *
@@ -94,21 +179,10 @@
      */
     public function setFirstName($FirstName)
     {
-        $this->FirstName = $FirstName;
+      $this->_FirstName = $FirstName;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Title
-     *
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->Title;
-    }
-
     /**
      * Set the value of Title
      *
@@ -118,21 +192,10 @@
      */
     public function setTitle($Title)
     {
-        $this->Title = $Title;
+      $this->_Title = $Title;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Title Of Courtesy
-     *
-     * @return mixed
-     */
-    public function getTitleOfCourtesy()
-    {
-        return $this->TitleOfCourtesy;
-    }
-
     /**
      * Set the value of Title Of Courtesy
      *
@@ -142,21 +205,10 @@
      */
     public function setTitleOfCourtesy($TitleOfCourtesy)
     {
-        $this->TitleOfCourtesy = $TitleOfCourtesy;
+      $this->_TitleOfCourtesy = $TitleOfCourtesy;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Birth Date
-     *
-     * @return mixed
-     */
-    public function getBirthDate()
-    {
-        return $this->BirthDate;
-    }
-
     /**
      * Set the value of Birth Date
      *
@@ -166,21 +218,10 @@
      */
     public function setBirthDate($BirthDate)
     {
-        $this->BirthDate = $BirthDate;
+      $this->_BirthDate = $BirthDate;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Hire Date
-     *
-     * @return mixed
-     */
-    public function getHireDate()
-    {
-        return $this->HireDate;
-    }
-
     /**
      * Set the value of Hire Date
      *
@@ -190,21 +231,10 @@
      */
     public function setHireDate($HireDate)
     {
-        $this->HireDate = $HireDate;
+      $this->_HireDate = $HireDate;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Address
-     *
-     * @return mixed
-     */
-    public function getAddress()
-    {
-        return $this->Address;
-    }
-
     /**
      * Set the value of Address
      *
@@ -214,21 +244,10 @@
      */
     public function setAddress($Address)
     {
-        $this->Address = $Address;
+      $this->_Address = $Address;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of City
-     *
-     * @return mixed
-     */
-    public function getCity()
-    {
-        return $this->City;
-    }
-
     /**
      * Set the value of City
      *
@@ -238,21 +257,10 @@
      */
     public function setCity($City)
     {
-        $this->City = $City;
+      $this->_City = $City;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Region
-     *
-     * @return mixed
-     */
-    public function getRegion()
-    {
-        return $this->Region;
-    }
-
     /**
      * Set the value of Region
      *
@@ -262,21 +270,10 @@
      */
     public function setRegion($Region)
     {
-        $this->Region = $Region;
+      $this->_Region = $Region;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Postal Code
-     *
-     * @return mixed
-     */
-    public function getPostalCode()
-    {
-        return $this->PostalCode;
-    }
-
     /**
      * Set the value of Postal Code
      *
@@ -286,21 +283,10 @@
      */
     public function setPostalCode($PostalCode)
     {
-        $this->PostalCode = $PostalCode;
+      $this->_PostalCode = $PostalCode;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Country
-     *
-     * @return mixed
-     */
-    public function getCountry()
-    {
-        return $this->Country;
-    }
-
     /**
      * Set the value of Country
      *
@@ -310,21 +296,10 @@
      */
     public function setCountry($Country)
     {
-        $this->Country = $Country;
+      $this->_Country = $Country;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Home Phone
-     *
-     * @return mixed
-     */
-    public function getHomePhone()
-    {
-        return $this->HomePhone;
-    }
-
     /**
      * Set the value of Home Phone
      *
@@ -334,21 +309,10 @@
      */
     public function setHomePhone($HomePhone)
     {
-        $this->HomePhone = $HomePhone;
+      $this->_HomePhone = $HomePhone;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Reports To
-     *
-     * @return mixed
-     */
-    public function getReportsTo()
-    {
-        return $this->ReportsTo;
-    }
-
     /**
      * Set the value of Reports To
      *
@@ -358,21 +322,10 @@
      */
     public function setReportsTo($ReportsTo)
     {
-        $this->ReportsTo = $ReportsTo;
+      $this->_ReportsTo = $ReportsTo;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Salary
-     *
-     * @return mixed
-     */
-    public function getSalary()
-    {
-        return $this->Salary;
-    }
-
     /**
      * Set the value of Salary
      *
@@ -382,21 +335,10 @@
      */
     public function setSalary($Salary)
     {
-        $this->Salary = $Salary;
+      $this->_Salary = $Salary;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Login
-     *
-     * @return mixed
-     */
-    public function getLogin()
-    {
-        return $this->Login;
-    }
-
     /**
      * Set the value of Login
      *
@@ -406,21 +348,10 @@
      */
     public function setLogin($Login)
     {
-        $this->Login = $Login;
+      $this->_Login = $Login;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Pass
-     *
-     * @return mixed
-     */
-    public function getPass()
-    {
-        return $this->Pass;
-    }
-
     /**
      * Set the value of Pass
      *
@@ -430,21 +361,10 @@
      */
     public function setPass($Pass)
     {
-        $this->Pass = $Pass;
+      $this->_Pass = $Pass;
 
-        return $this;
+      return $this;
     }
-
-    /**
-     * Get the value of Employee
-     *
-     * @return mixed
-     */
-    public function getResponsable()
-    {
-        return $this->Responsable;
-    }
-
     /**
      * Set the value of Employee
      *
@@ -454,40 +374,56 @@
      */
     public function setResponsable($Responsable)
     {
-        $this->Responsable = $Responsable;
+      $this->_Responsable = $Responsable;
 
-        return $this;
+      return $this;
     }
-    /* ------------------------------------------------------------------------ */
-    /* ----- ACCESSEURS ------------------------------------------------------- */
-    /* ------------------------------------------------------------------------ */
+
   /* ------------------------------------------------------------------------ */
 
 
-  // Définition du constructeur, tjrs en public !
-  public function __construct($inID){
-    include ("../includes/connexion_bdd.php");
-    include_once ("Base.class.php");
-    $info_employe_connecte = Base::selection_1p("Employees", $inID, $connexion_bdd);
-
-    $this->setEmployeeID($info_employe_connecte["EmployeeID"]);
-    $this->setLastName($info_employe_connecte["LastName"]);
-    $this->setFirstName($info_employe_connecte["FirstName"]);
-    $this->setTitle($info_employe_connecte["Title"]);
-    $this->setTitleOfCourtesy($info_employe_connecte["TitleOfCourtesy"]);
-    $this->setBirthDate($info_employe_connecte["BirthDate"]);
-    $this->setHireDate($info_employe_connecte["HireDate"]);
-    $this->setAddress($info_employe_connecte["Address"]);
-    $this->setCity($info_employe_connecte["City"]);
-    $this->setRegion($info_employe_connecte["Region"]);
-    $this->setPostalCode($info_employe_connecte["PostalCode"]);
-    $this->setCountry($info_employe_connecte["Country"]);
-    $this->setHomePhone($info_employe_connecte["HomePhone"]);
-    $this->setReportsTo($info_employe_connecte["ReportsTo"]);
-    $this->setSalary($info_employe_connecte["Salary"]);
-    $this->setLogin($info_employe_connecte["Login"]);
-    $this->setPass($info_employe_connecte["Pass"]);
+  // Fonction d'hydratation.
+  private function hydrate(array $donnees) {
+    foreach ($donnees as $key => $val) {
+      $method = "set".$key;
+      if (method_exists($this, $method)) {
+        $this->$method($val);
+      }
+    }
   }
+
+  // Définition du constructeur, tjrs en public !
+  public function __construct(array $tabl){
+    self::hydrate($tabl);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // Méthode statique qui appartient à la classe et non à l'objet -- Donc pas de $this !!
   public static function connexion_employe($inLogin, $inPass) {
