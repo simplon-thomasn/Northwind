@@ -15,7 +15,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    
+
     <div class="container-fluid">
       <section class="row banniere">
 

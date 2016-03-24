@@ -1,35 +1,41 @@
 <?php
+
+  // le nom de la classe commence aussi par une majuscule : respect de la notation PEAR.
   class Personnel{
 
-    private $EmployeeID;
-    private $LastName;
-    private $FirstName;
-    private $Title;
-    private $TitleOfCourtesy;
-    private $BirthDate;
-    private $HireDate;
-    private $Address;
-    private $City;
-    private $Region;
-    private $PostalCode;
-    private $Country;
-    private $HomePhone;
-    private $ReportsTo;
-    private $Salary;
-    private $Login;
-    private $Pass;
+    // le '_' est issue de la notation PEAR.
+    private $_EmployeeID;
+    private $_LastName;
+    private $_FirstName;
+    private $_Title;
+    private $_TitleOfCourtesy;
+    private $_BirthDate;
+    private $_HireDate;
+    private $_Address;
+    private $_City;
+    private $_Region;
+    private $_PostalCode;
+    private $_Country;
+    private $_HomePhone;
+    private $_ReportsTo;
+    private $_Salary;
+    private $_Login;
+    private $_Pass;
+    private $_Responsable;
+
+    // Déclaration de variables constantes, tjrs en majuscule.
+    const VAR_CONSTANTE = "val";
+    const VAR_CONSTANTE2 = "autre_val"
 
   /* ------------------------------------------------------------------------ */
-
+  /* ----- ACCESSEURS ------------------------------------------------------- */
+  /* ------------------------------------------------------------------------ */
     /**
      * Get the value of Employee
      *
      * @return mixed
      */
-    public function getEmployeeID()
-    {
-        return $this->EmployeeID;
-    }
+    public function getEmployeeID(){ return $this->_EmployeeID; }
 
     /**
      * Set the value of Employee
@@ -429,18 +435,82 @@
         return $this;
     }
 
+    /**
+     * Get the value of Employee
+     *
+     * @return mixed
+     */
+    public function getResponsable()
+    {
+        return $this->Responsable;
+    }
+
+    /**
+     * Set the value of Employee
+     *
+     * @param mixed EmployeeID
+     *
+     * @return self
+     */
+    public function setResponsable($Responsable)
+    {
+        $this->Responsable = $Responsable;
+
+        return $this;
+    }
+    /* ------------------------------------------------------------------------ */
+    /* ----- ACCESSEURS ------------------------------------------------------- */
+    /* ------------------------------------------------------------------------ */
   /* ------------------------------------------------------------------------ */
 
-  public static function listePersonnel(){
-    include ("./includes/connexion_bdd.php");
 
-    $req_selectionListePersonnel = $connexion_bdd->query("
-      SELECT *
-      FROM Employees
-    ");
+  // Définition du constructeur, tjrs en public !
+  public function __construct($inID){
+    include ("../includes/connexion_bdd.php");
+    include_once ("Base.class.php");
+    $info_employe_connecte = Base::selection_1p("Employees", $inID, $connexion_bdd);
 
-    $selectionListePersonnel = $req_selectionListePersonnel->fetchAll();
-
-    return $selectionListePersonnel;
+    $this->setEmployeeID($info_employe_connecte["EmployeeID"]);
+    $this->setLastName($info_employe_connecte["LastName"]);
+    $this->setFirstName($info_employe_connecte["FirstName"]);
+    $this->setTitle($info_employe_connecte["Title"]);
+    $this->setTitleOfCourtesy($info_employe_connecte["TitleOfCourtesy"]);
+    $this->setBirthDate($info_employe_connecte["BirthDate"]);
+    $this->setHireDate($info_employe_connecte["HireDate"]);
+    $this->setAddress($info_employe_connecte["Address"]);
+    $this->setCity($info_employe_connecte["City"]);
+    $this->setRegion($info_employe_connecte["Region"]);
+    $this->setPostalCode($info_employe_connecte["PostalCode"]);
+    $this->setCountry($info_employe_connecte["Country"]);
+    $this->setHomePhone($info_employe_connecte["HomePhone"]);
+    $this->setReportsTo($info_employe_connecte["ReportsTo"]);
+    $this->setSalary($info_employe_connecte["Salary"]);
+    $this->setLogin($info_employe_connecte["Login"]);
+    $this->setPass($info_employe_connecte["Pass"]);
   }
-}
+
+  // Méthode statique qui appartient à la classe et non à l'objet -- Donc pas de $this !!
+  public static function connexion_employe($inLogin, $inPass) {
+    include ("../includes/connexion_bdd.php");
+    include_once ("Base.class.php");
+    $employe_en_cours_de_connexion = Base::selection_2p("Employees", $inLogin, $inPass, $connexion_bdd);
+    return $employe_en_cours_de_connexion;
+  }
+
+  public function responsable($inID) {
+    include ("includes/connexion_bdd.php");
+    include_once ("Base.class.php");
+    $responsable_employe = Base::selection_1p("Employees", $inID, $connexion_bdd);
+    $this->setResponsable($responsable_employe["LastName"]);
+  }
+
+  public function modifier_employe() {
+
+  }
+
+  public function supprimer_employe() {
+
+  }
+
+
+}// Balise de fermeture de la classe

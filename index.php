@@ -1,18 +1,21 @@
 <?php
   include ("includes/header.php");
+  include ("includes/messages.php");
 ?>
 
     <section class="row formulaire">
-      <form class="col-md-offset-3 col-lg-3">
+
+      <form class="col-md-offset-3 col-lg-3" method="POST" action="./traitements/veriflogin.php">
         <legend>Northwind - Espace employé</legend>
-          <label for="text">Identifiant : </label>
-          <input id="login" type="text" class="form-control">
-          <label for="text">Pass : </label>
-          <input id="pass" type="password" class="form-control">
+          <label for="login">Identifiant : </label>
+          <input type="text" id="login" name="login" class="form-control">
+          <label for="pass">Pass : </label>
+          <input type="password" id="pass" name="pass" class="form-control">
           <br>
-          <button>S'identifier</button>
+          <button type=submit class="btn btn-primary btn-sm">S'identifier</button>
       </form>
-      <form class="col-lg-3">
+
+      <div class="col-lg-3">
         <legend>Vue d'ensemble</legend>
           <ul class="list-group">
             <a href="listepersonnel.php" class="list-group-item">
@@ -21,8 +24,12 @@
             <a href="listeproduits.php" class="list-group-item">
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>Produits
             </a>
+            <a href="hierarchie.php" class="list-group-item">
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>Hiérarchie
+            </a>
           </ul>
-      </form>
+      </div>
+
     </section>
 
 <?php

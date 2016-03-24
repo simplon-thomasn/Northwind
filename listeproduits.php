@@ -1,12 +1,9 @@
 <?php
   include ("includes/header.php");
-  include_once ("classes/Produit.class.php");
+  include ("includes/connexion_bdd.php");
+  include_once ("classes/Base.class.php");
 
-  $listeProduits = Produit::listeProduits();
-
-  /*echo "<pre>";
-  print_r ($listePersonnel);
-  echo "</pre>";*/
+  $listeProduits = Base::selection("Products", $connexion_bdd);
 ?>
 
 <div class="panel panel-primary">

@@ -136,6 +136,7 @@
     $req_selectionListeProduits = $connexion_bdd->query("
       SELECT *
       FROM Products
+      ORDER BY ProductName
     ");
 
     $selectionListeProduits = $req_selectionListeProduits->fetchAll();
